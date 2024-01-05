@@ -22,6 +22,7 @@
     "server-side-rendering",
     "dynamic-component"
   ],
+  "license": "LGPL-3.0-or-later",
   "main": "dist/client-only.umd.cjs",
   "module": "dist/client-only.js",
   "types": "dist/index.d.ts",
