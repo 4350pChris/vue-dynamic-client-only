@@ -1,0 +1,30 @@
+{
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "dev": "hattip serve ./hattip-entry.ts --client",
+    "build": "hattip build ./hattip-entry.ts --client"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@hattip/adapter-node": "^0.0.37",
+    "@hattip/vite": "^0.0.37",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@hattip/core": "^0.0.37",
+    "@hattip/router": "^0.0.37",
+    "@vitejs/plugin-vue": "^5.0.2",
+    "@vue/compiler-sfc": "^3.4.3",
+    "@vue/server-renderer": "^3.4.3",
+    "cross-fetch": "^4.0.0",
+    "hattip": "^0.0.33",
+    "unplugin-vue-markdown": "^0.25.2",
+    "vike": "^0.4.153",
+    "vike-vue": "^0.5.3",
+    "vite": "^5.0.10",
+    "vue": "^3.4.3"
+  }
+}

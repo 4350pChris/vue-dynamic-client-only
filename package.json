@@ -1,0 +1,40 @@
+{
+  "name": "vue-client-only-test",
+  "version": "0.0.1",
+  "author": {
+    "name": "Chris-Robin Ennen",
+    "email": "vue@ennen.dev"
+  },
+  "description": "A Vue 3 component that renders its children only on the client using a dynamic component.",
+  "main": "dist/client-only.umd.cjs",
+  "module": "dist/client-only.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/client-only.js",
+      "require": "./dist/client-only.umd.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "typescript": "^5.2.2",
+    "vite": "^5.0.8",
+    "vite-plugin-dts": "^3.7.0",
+    "vue": "^3.3.11",
+    "vue-tsc": "^1.8.25"
+  }
+}
