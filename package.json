@@ -10,6 +10,18 @@
     "url": "https://github.com/4350pChris/vue-dynamic-client-only.git"
   },
   "description": "A Vue 3 component that renders its children only on the client using a dynamic component.",
+  "keywords": [
+    "vue",
+    "vue-ssr",
+    "vite",
+    "vue3",
+    "vitejs",
+    "component",
+    "client-only",
+    "ssr",
+    "server-side-rendering",
+    "dynamic-component"
+  ],
   "main": "dist/client-only.umd.cjs",
   "module": "dist/client-only.js",
   "types": "dist/index.d.ts",
