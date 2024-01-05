@@ -5,10 +5,18 @@
     "name": "Chris-Robin Ennen",
     "email": "vue@ennen.dev"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/4350pChris/vue-dynamic-client-only.git"
+  },
   "description": "A Vue 3 component that renders its children only on the client using a dynamic component.",
   "main": "dist/client-only.umd.cjs",
   "module": "dist/client-only.js",
   "types": "dist/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  },
   "exports": {
     ".": {
       "import": "./dist/client-only.js",

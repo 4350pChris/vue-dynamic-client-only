@@ -6,6 +6,7 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     permissions:
+      id-token: write
       contents: read
       packages: write
     steps:
@@ -44,9 +45,11 @@ jobs:
         name: "Publish to npm"
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          provenance: true
 
       - uses: JS-DevTools/npm-publish@v3
         name: "Publish to GitHub Packages"
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           registry: "https://npm.pkg.github.com"
+          provenance: true
