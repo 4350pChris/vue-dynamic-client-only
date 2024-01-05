@@ -32,12 +32,12 @@
   "exports": {
     ".": {
       "import": "./dist/client-only.js",
-      "require": "./dist/client-only.umd.cjs"
+      "require": "./dist/client-only.umd.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "type": "module",
   "scripts": {
