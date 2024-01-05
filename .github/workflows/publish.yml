@@ -46,6 +46,7 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           provenance: true
+          access: "public"
 
       - uses: JS-DevTools/npm-publish@v3
         name: "Publish to GitHub Packages"
@@ -53,3 +54,4 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           registry: "https://npm.pkg.github.com"
           provenance: true
+          access: "public"
