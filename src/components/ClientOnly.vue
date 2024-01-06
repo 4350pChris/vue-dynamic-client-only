@@ -6,13 +6,12 @@
 import { h, ref, onMounted, defineAsyncComponent, useSlots, type AsyncComponentLoader } from 'vue';
 
 type Props = {
-  load?: T
+  load: T
 }
 
 const props = defineProps<Props>()
 
 type Slots = {
-  default?: () => any
   fallback?: () => any
   error?: () => any
 }
@@ -20,18 +19,8 @@ type Slots = {
 defineSlots<Slots>()
 const slots = useSlots()
 
-if (!slots.default && !props.load) {
-  throw new Error("ClientOnly component requires either a default slot or a load prop")
-}
-
-if (slots.default && props.load) {
-  throw new Error("ClientOnly component requires either a default slot or a load prop, not both")
-}
-
-const loader = props.load ?? (() => Promise.resolve(slots.default))
-
 const ClientComponent = defineAsyncComponent({
-  loader,
+  loader: props.load,
   loadingComponent: slots.fallback,
   errorComponent: slots.error ?? (() => h("p", "Error loading component")),
   onError: (e) => {

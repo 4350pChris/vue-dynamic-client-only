@@ -6,62 +6,31 @@
     <li>Interactive.</li>
   </ul>
   <h2>Successful Client Only component</h2>
-  <pre>
-    <code>
-      {{ ` 
-<ClientOnly :load="load">
+  <pre><code>{{ `<ClientOnly :load="() => import('../../components/Counter.vue')">
   <template #fallback>
     Loading...
   </template>
-</ClientOnly>
-      `}}
-    </code>
-  </pre>
+</ClientOnly>`}}</code></pre>
   <ClientOnly :load="load">
     <template #fallback>
       Loading...
     </template>
   </ClientOnly>
   <h2>Failed Client Only component</h2>
-  <pre>
-    <code>
-      {{ `
-<ClientOnly :load="fail">
+  <pre><code>{{ `<ClientOnly :load="fail">
   <template #fallback>
     Loading...
   </template>
   <template #error>
     Error loading component
   </template>
-</ClientOnly>
-      `}}
-    </code>
-  </pre>
+</ClientOnly>`}}</code></pre>
   <ClientOnly :load="fail">
     <template #fallback>
       Loading...
     </template>
     <template #error>
       Error loading component
-    </template>
-  </ClientOnly>
-  <h2>ClientOnly with sync component</h2>
-  <pre>
-    <code>
-      {{ `
-<ClientOnly>
-  <p>Default slot</p>
-  <template #fallback>
-    Loading...
-  </template>
-</ClientOnly>
-      ` }}
-    </code>
-  </pre>
-  <ClientOnly>
-    <p>Default slot</p>
-    <template #fallback>
-      Loading...
     </template>
   </ClientOnly>
 </template>
@@ -83,3 +52,10 @@ const fail = () => new Promise((resolve, reject) => {
   }, 1000)
 })
 </script>
+
+<style scoped>
+pre {
+  background-color: #eee;
+  padding: 1em;
+}
+</style>
