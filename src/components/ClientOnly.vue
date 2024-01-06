@@ -1,9 +1,9 @@
 <template>
-  <component :is="client ? ClientComponent : ServerComponent" />
+  <ClientComponent v-if="client" />
 </template>
 
 <script lang="ts" setup generic="T extends AsyncComponentLoader">
-import { h, ref, onMounted, defineComponent, defineAsyncComponent, useSlots, type AsyncComponentLoader } from 'vue';
+import { h, ref, onMounted, defineAsyncComponent, useSlots, type AsyncComponentLoader } from 'vue';
 
 type Props = {
   load?: T
@@ -39,10 +39,6 @@ const ClientComponent = defineAsyncComponent({
     throw e
   },
   suspensible: false,
-})
-
-const ServerComponent = defineComponent({
-  render: () => slots.fallback?.(),
 })
 
 const client = ref(false)
