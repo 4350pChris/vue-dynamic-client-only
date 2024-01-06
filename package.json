@@ -1,6 +1,6 @@
 {
   "name": "@4350pchris/vue-dynamic-client-only",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "author": {
     "name": "Chris-Robin Ennen",
     "email": "vue@ennen.dev"
@@ -42,9 +42,7 @@
   ],
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc && vite build",
-    "preview": "vite preview"
+    "build": "vue-tsc && vite build"
   },
   "peerDependencies": {
     "vue": "^3.3.11"

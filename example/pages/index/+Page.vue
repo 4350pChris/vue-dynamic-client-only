@@ -5,13 +5,38 @@
     <li>Rendered to HTML.</li>
     <li>Interactive.</li>
   </ul>
-  <p>Successful Client Only component</p>
+  <h2>Successful Client Only component</h2>
+  <pre>
+    <code>
+      {{ ` 
+<ClientOnly :load="load">
+  <template #fallback>
+    Loading...
+  </template>
+</ClientOnly>
+      `}}
+    </code>
+  </pre>
   <ClientOnly :load="load">
     <template #fallback>
       Loading...
     </template>
   </ClientOnly>
-  <p>Failed Client Only component</p>
+  <h2>Failed Client Only component</h2>
+  <pre>
+    <code>
+      {{ `
+<ClientOnly :load="fail">
+  <template #fallback>
+    Loading...
+  </template>
+  <template #error>
+    Error loading component
+  </template>
+</ClientOnly>
+      `}}
+    </code>
+  </pre>
   <ClientOnly :load="fail">
     <template #fallback>
       Loading...
@@ -20,10 +45,29 @@
       Error loading component
     </template>
   </ClientOnly>
+  <h2>ClientOnly with sync component</h2>
+  <pre>
+    <code>
+      {{ `
+<ClientOnly>
+  <p>Default slot</p>
+  <template #fallback>
+    Loading...
+  </template>
+</ClientOnly>
+      ` }}
+    </code>
+  </pre>
+  <ClientOnly>
+    <p>Default slot</p>
+    <template #fallback>
+      Loading...
+    </template>
+  </ClientOnly>
 </template>
 
 <script lang="ts" setup>
-import { ClientOnly } from "../../../src"
+import ClientOnly from "../../../src/components/ClientOnly.vue"
 
 // const load = () => import("../../components/Counter.vue");
 const load = () => new Promise((resolve, reject) => {

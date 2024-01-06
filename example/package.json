@@ -1,6 +1,7 @@
 {
   "version": "0.0.1",
-  "description": "",
+  "private": true,
+  "description": "Example for @4350pchris/vue-dynamic-client-only",
   "type": "module",
   "scripts": {
     "dev": "hattip serve ./hattip-entry.ts --client",
